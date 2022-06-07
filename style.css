@@ -18,18 +18,18 @@ body {
     margin: 0;
 }
 
- a {
+ button {
      cursor:pointer;
 }
  
-.tab-nav a {
+.tab-nav button {
     float:left; 
     list-style:none; 
     margin-right:5px; 
     outline:none;
  }
  
- .tab-nav a {
+ .tab-nav button {
     color: #5685bc;;
     padding-top: 5px;
     padding-left: 7px;
@@ -42,7 +42,7 @@ body {
    
  }
  
- .tab-nav a.inactive{
+ .tab-nav button.inactive{
     padding-top:5px;
     padding-bottom:8px;
     padding-left: 8px;
@@ -53,7 +53,7 @@ body {
  
  }
  
- .tab-nav a:hover, .tab-nav a.inactive:hover {
+ .tab-nav button:hover, .tab-nav button.inactive:hover {
     color: #5685bc;
     outline:none;
  }
