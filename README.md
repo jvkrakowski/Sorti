@@ -26,7 +26,7 @@ Sorti aims to provide a straightforward solution for creating tabbed content dis
 
 ## Demo
 
-You can see a live demo of Sorti [here](https://jvkrakowski.github.io/Sorti/demo.html).
+Download and open the index file (in your browser) from the project folder.
 
 ## Installation
 
