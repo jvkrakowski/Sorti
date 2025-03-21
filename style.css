@@ -1,14 +1,22 @@
+/* Define CSS variables for common values */
+:root {
+    --font-family: Helvetica, Arial, sans-serif;
+    --primary-color: #5685bc;
+    --inactive-color: #CCCCCC;
+    --border-color: black;
+    --padding: 5px 7px 8px;
+}
+
 body {
     font-size: 16px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: var(--font-family);
     padding: 10px;
 }
 
 .wrapper {
     width: 75%;
     max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .tab-nav {
@@ -18,52 +26,43 @@ body {
     margin: 0;
 }
 
+/* General anchor styles */
 a {
     cursor: pointer;
+    text-decoration: none;
+    outline: none;
 }
 
+/* Tab navigation styles */
 .tab-nav a {
     float: left;
     list-style: none;
     margin-right: 5px;
-    outline: none;
-}
-
-.tab-nav a {
-    color: #5685bc;
-    padding-top: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-bottom: 8px;
     display: block;
-    border-bottom: 2px solid black;
-    text-decoration: none;
-    outline: none;
-
+    padding: var(--padding);
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
 }
 
 .tab-nav a.inactive {
-    padding-top: 5px;
-    padding-bottom: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-    color: #CCCCCC;
+    color: var(--inactive-color);
     border-bottom: none;
-    outline: none;
-
 }
 
 .tab-nav a:hover,
 .tab-nav a.inactive:hover {
-    color: #5685bc;
-    outline: none;
+    color: var(--primary-color);
+}
+
+/* Focus styles for accessibility */
+.tab-nav a:focus,
+.tab-nav a.inactive:focus {
+    outline: 2px dashed var(--primary-color);
 }
 
 .tab-panel {
-
     clear: both;
     width: 100%;
     text-align: left;
     padding-top: 20px;
-
 }
