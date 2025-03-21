@@ -1,28 +1,24 @@
-$(function () {
+$(document).ready(function () {
+    // Initialize the tabs
     $(".tab-nav a:not(:first)").addClass("inactive");
     $(".tab-panel").hide();
     $(".tab-panel:first").show();
 
-    $(".tab-nav button").click(function () {
-        var tabs = $(this).attr("id");
-        if ($(this).hasClass("inactive")) {
-            $(".tab-nav button").addClass("active");
-            $(this).removeClass("inactive");
+    // Event delegation for tab clicks
+    $(".tab-nav").on("click", "a", function (event) {
+        event.preventDefault();
+        var $this = $(this);
+        var tabId = $this.attr("id");
 
-            $(".tab-panel").hide();
-            $("#" + tabs + "-panel").fadeIn("slow");
-        }
+        // If the clicked tab is already active, do nothing
+        if (!$this.hasClass("inactive")) return;
 
-        if ($(this).hasClass("active")) {
-            $(this).removeClass("active");
-            $(this).addClass("inactive");
+        // Deactivate all tabs and hide panels
+        $(".tab-nav a").addClass("inactive").removeClass("active");
+        $(".tab-panel").hide();
 
-            $(".tab-panel").hide();
-            $("#" + tabs + "-panel").fadeIn("slow");
-        }
-
-
-
+        // Activate the clicked tab and show the corresponding panel
+        $this.removeClass("inactive").addClass("active");
+        $("#" + tabId + "-panel").fadeIn("slow");
     });
-
 });
